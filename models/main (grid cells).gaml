@@ -25,12 +25,13 @@ global {
 	
 	// Load shapefiles
 	string resources_dir <- "../includes/bigger_map/";
-	shape_file map_boundary_rectangle_shape_file <- shape_file(resources_dir + "resize_rectangle.shp");	
-	shape_file roads_shape_file <- shape_file(resources_dir + "roads.shp");
-	shape_file dummy_roads_shape_file <- shape_file(resources_dir + "small_dummy_roads.shp");
-	shape_file buildings_shape_file <- shape_file(resources_dir + "buildings.shp");
-	shape_file buildings_admin_shape_file <- shape_file(resources_dir + "buildings_admin.shp");
-	shape_file naturals_shape_file <- shape_file(resources_dir + "naturals.shp");
+	string resources_d <- "../includes/quito3/";
+	shape_file map_boundary_rectangle_shape_file <- shape_file(resources_d + "resize_rectangle.shp");	
+	shape_file roads_shape_file <- shape_file(resources_d + "roads.shp");
+	shape_file dummy_roads_shape_file <- shape_file(resources_d + "small_dummy_roads.shp");
+	shape_file buildings_shape_file <- shape_file(resources_d + "buildings.shp");
+	//shape_file buildings_admin_shape_file <- shape_file(resources_dir + "buildings_admin.shp");
+	shape_file naturals_shape_file <- shape_file(resources_d + "naturals.shp");
 
 //	shape_file buildings_shape_file <- shape_file("../includes/_old_dataset/map3D/HKA_maquette - buildings.shp");
 	
@@ -43,6 +44,7 @@ global {
 		create road from: roads_shape_file {
 			// Create a reverse road if the road is not oneway
 			if (!oneway) {
+				write("si");
 				create road {
 					shape <- polyline(reverse(myself.shape.points));
 					name <- myself.name;
@@ -51,6 +53,7 @@ global {
 					s2_closed <- myself.s2_closed;
 				}
 			}
+			write("no");
 		}
 		open_roads <- list(road);//agrega las calles a la lista de abiertas
 		map<road, float> road_weights <- road as_map (each::each.shape.perimeter); 
@@ -62,7 +65,7 @@ global {
 		create building from: buildings_shape_file {
 			p_cell <- pollutant_cell closest_to self;
 		}
-		create decoration_building from: buildings_admin_shape_file;
+		//create decoration_building from: buildings_admin_shape_file;
 		create dummy_road from: dummy_roads_shape_file;
 		create natural from: naturals_shape_file;
 		
@@ -359,7 +362,7 @@ camera_location: {983.1376,1519.9429,3978.7622} camera_target: {983.1376,1519.87
 			species road;
 			species natural;
 			species building;
-			species decoration_building;
+			//species decoration_building;
 			species dummy_road;
 			//grid pollutant_cell transparency: (display_mode = 0) ? 1.0 : 0.4 elevation: norm_pollution_level * 10 triangulation: true;
 			

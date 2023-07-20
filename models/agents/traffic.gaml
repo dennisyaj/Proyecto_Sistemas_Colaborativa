@@ -83,7 +83,7 @@ species vehicle skills: [moving] {
 	aspect default {
 		switch type {
 			match "car" {
-				draw rectangle(10, 5) rotate: heading color: palet[CAR] depth: 2;
+				draw rectangle(7, 5) rotate: heading color: palet[CAR] depth: 2;
 			}
 			match "motorbike" {
 				draw rectangle(5, 2) rotate: heading color: palet[MOTOBYKE] depth: 3;
@@ -91,7 +91,7 @@ species vehicle skills: [moving] {
 			
 			//Vehiculo de tipo hibrido, color amarillo difinido en global_vars
 			match "hibrido" {
-				draw rectangle(10, 5) rotate: heading color: palet[HIBRIDO] depth: 2;
+				draw rectangle(7, 5) rotate: heading color: palet[HIBRIDO] depth: 2;
 			}
 		}
 	}

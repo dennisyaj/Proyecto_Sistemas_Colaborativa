@@ -25,7 +25,7 @@ global {
 	
 	// Load shapefiles
 	string resources_dir <- "../includes/bigger_map/";
-	string resources_d <- "../includes/quito3/";
+	string resources_d <- "../includes/quito5/";
 	shape_file map_boundary_rectangle_shape_file <- shape_file(resources_d + "resize_rectangle.shp");	
 	shape_file roads_shape_file <- shape_file(resources_d + "roads.shp");
 	shape_file dummy_roads_shape_file <- shape_file(resources_d + "small_dummy_roads.shp");

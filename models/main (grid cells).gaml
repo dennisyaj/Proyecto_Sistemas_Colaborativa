@@ -25,11 +25,11 @@ global {
 	
 	// Load shapefiles
 	string resources_dir <- "../includes/bigger_map/";
-	string resources_d <- "../includes/quito3/";
+	string resources_d <- "../includes/Final/";
 	shape_file map_boundary_rectangle_shape_file <- shape_file(resources_d + "resize_rectangle.shp");	
-	shape_file roads_shape_file <- shape_file(resources_d + "roads.shp");
-	shape_file dummy_roads_shape_file <- shape_file(resources_d + "small_dummy_roads.shp");
-	shape_file buildings_shape_file <- shape_file(resources_d + "buildings.shp");
+	shape_file roads_shape_file <- shape_file(resources_d + "Roads.shp");
+	shape_file dummy_roads_shape_file <- shape_file(resources_dir + "small_dummy_roads.shp");
+	shape_file buildings_shape_file <- shape_file(resources_d + "Buildings.shp");
 	//shape_file buildings_admin_shape_file <- shape_file(resources_dir + "buildings_admin.shp");
 	shape_file naturals_shape_file <- shape_file(resources_d + "naturals.shp");
 

@@ -14,7 +14,7 @@ global {
 	map<string, map<string, float>> EMISSION_FACTOR <- [
 		"motorbike"::["CO"::3.62, "NOx"::0.3, "SO2"::0.03, "PM"::0.1],  // Unit: g/km
 		"car"::["CO"::3.62, "NOx"::1.5, "SO2"::0.17, "PM"::0.1],
-		"hibrido"::["CO"::2.62, "NOx"::0.3, "SO2"::0.03, "PM"::0.1] //contaminantes para hibrido
+		"hibrido"::["CO"::0.21, "NOx"::0.006, "SO2"::0.02, "PM"::0.01] //contaminantes para hibrido
 	];
 	
 	// Params
